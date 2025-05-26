@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Enemy
   - BG
+  - 'EnemyWeapon   '
   layers:
   - Default
   - TransparentFX
@@ -13,9 +14,9 @@ TagManager:
   - 
   - Water
   - UI
-  - 
-  - 
-  - 
+  - Player
+  - Enemy
+  - Dead
   - 
   - 
   - 
@@ -43,7 +44,7 @@ TagManager:
   - name: Background
     uniqueID: 2211517123
     locked: 0
-  - name: Front
+  - name: Gameplay
     uniqueID: 1108096331
     locked: 0
   - name: Default
