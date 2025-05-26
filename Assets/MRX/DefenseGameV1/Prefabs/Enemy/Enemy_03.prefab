@@ -13,7 +13,8 @@ GameObject:
   - component: {fileID: 3979192739928747077}
   - component: {fileID: -1714515106358645523}
   - component: {fileID: 359346013580052514}
-  m_Layer: 0
+  - component: {fileID: 8707733566878939247}
+  m_Layer: 7
   m_Name: Enemy_03
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -77,9 +78,9 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingLayerID: 1108096331
+  m_SortingLayer: -1
+  m_SortingOrder: 1
   m_Sprite: {fileID: 8051780188957950043, guid: ff93383eea04c64419a3aee747c78d4d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -186,6 +187,20 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!114 &8707733566878939247
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6913103028496718465}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3cbfd0e27237a26469159f1a7f104a9a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 2
+  atkDistance: 1.5
 --- !u!1 &7270461668552408373
 GameObject:
   m_ObjectHideFlags: 0
@@ -197,7 +212,7 @@ GameObject:
   - component: {fileID: 6645145322483574283}
   - component: {fileID: 5883482390463236699}
   - component: {fileID: 8905430020694809388}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Weapon
   m_TagString: 'EnemyWeapon   '
   m_Icon: {fileID: 0}

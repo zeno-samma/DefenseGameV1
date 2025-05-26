@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 7301514033922180264}
   - component: {fileID: 7987252453438267155}
   - component: {fileID: -7488359773011847189}
+  - component: {fileID: 4915017913691198750}
   m_Layer: 7
   m_Name: Enemy_02
   m_TagString: Enemy
@@ -77,9 +78,9 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingLayerID: 1108096331
+  m_SortingLayer: -1
+  m_SortingOrder: 1
   m_Sprite: {fileID: 8051780188957950043, guid: 88f09530c69615241b254a4509f0d39b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -186,6 +187,20 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!114 &4915017913691198750
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 585677798871758442}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3cbfd0e27237a26469159f1a7f104a9a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 2
+  atkDistance: 2
 --- !u!1 &722995783578021171
 GameObject:
   m_ObjectHideFlags: 0
@@ -197,9 +212,9 @@ GameObject:
   - component: {fileID: 7230188845412184193}
   - component: {fileID: 6037108139179724514}
   - component: {fileID: 592797877276553209}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Weapon
-  m_TagString: Untagged
+  m_TagString: 'EnemyWeapon   '
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
