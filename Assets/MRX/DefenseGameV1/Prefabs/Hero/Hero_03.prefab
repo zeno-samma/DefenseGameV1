@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 7149051999152902322}
   m_Layer: 0
   m_Name: Weapon
-  m_TagString: Untagged
+  m_TagString: 'PlayerWeapon '
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -109,7 +109,7 @@ GameObject:
   - component: {fileID: 5736218737411101552}
   - component: {fileID: 3611167268385509273}
   - component: {fileID: 4819163434550644547}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Hero_03
   m_TagString: Player
   m_Icon: {fileID: 0}

@@ -1,24 +1,24 @@
 using System.Collections;
 using Unity.Mathematics;
+using Unity.VisualScripting;
 using UnityEngine;
 
 namespace MRX.DefenseGameV1
 {
-
-    public class Hello : MonoBehaviour
+    public class Player : MonoBehaviour
     {
-        // public Transform myTransform;
-        public GameObject EnemyPrefabs;
-        public SpriteRenderer sp;
-        public Transform myTransfrom;
-        public Hello hello;
-        float score;
+        public Animator m_anim;
+        public float m_Attack_CD;
+        public float m_Cur_Attack_CD;
+        public bool m_Attacked;
         private void Awake()
         {
             // Debug.Log("Awake");
             //Get component script
             // sp = GetComponent<SpriteRenderer>();
             // sp.color = Color.blue;
+            m_anim = GetComponent<Animator>();
+            m_Cur_Attack_CD = m_Attack_CD;
         }
         private void OnEnable()
         {
@@ -45,10 +45,10 @@ namespace MRX.DefenseGameV1
             // StartCoroutine(DemoIE());//Delay action hard
             // Invoke("Work", 1f);//Delay action basic
             //Save score in mycomputer
-            score = PlayerPrefs.GetFloat("Score", 0);
-            score += 10;
-            PlayerPrefs.SetFloat("Score", score);
-            Debug.Log("Điểm số : " + score);
+            // score = PlayerPrefs.GetFloat("Score", 0);
+            // score += 10;
+            // PlayerPrefs.SetFloat("Score", score);
+            // Debug.Log("Điểm số : " + score);
 
         }
 
@@ -57,6 +57,33 @@ namespace MRX.DefenseGameV1
         {
             // Debug.Log("Hello Update");
             // Debug.Log(gameObject.transform);
+            if (Input.GetMouseButtonDown(0) && (!m_Attacked))
+            {
+                // Debug.Log("Người chơi đã ấn chuột trái");
+                if (m_anim)
+                {
+                    m_anim.SetBool(Const.ATTACK_ANIM, true);
+                }
+                m_Attacked = true;
+
+            }
+            if (m_Attacked)
+            {
+                Debug.Log("m_Attacked true");
+                m_Cur_Attack_CD -= Time.deltaTime;
+                if (m_Cur_Attack_CD <= 0)
+                {
+                    m_Attacked = false;
+                    m_Cur_Attack_CD = m_Attack_CD;
+                }
+            }
+        }
+        public void RsAnim()
+        {
+            if (m_anim)
+            {
+                m_anim.SetBool(Const.ATTACK_ANIM, false);
+            }
         }
 
         private void OnDisable()
@@ -86,18 +113,6 @@ namespace MRX.DefenseGameV1
         //     Debug.Log("Đối tượng va chạm là: " + colTarget.gameObject.tag);
         //     colTarget.gameObject.GetComponent<SpriteRenderer>().color = Color.blue;
         // }
-
-        private IEnumerator DemoIE()
-        {
-            yield return new WaitForSeconds(3);
-            Debug.Log("Thực hiện công việc 1");
-            yield return new WaitForSeconds(2);
-            Debug.Log("Thực hiện công việc 2");
-        }
-        private void Work()
-        {
-            Debug.Log("Thực hiện công việc 1");
-        }
 
     }
 

@@ -5,7 +5,7 @@ using UnityEngine;
 namespace MRX.DefenseGameV1
 {
 
-    public class Hello : MonoBehaviour
+    public class ScriptBasic : MonoBehaviour
     {
         // public Transform myTransform;
         public GameObject EnemyPrefabs;
