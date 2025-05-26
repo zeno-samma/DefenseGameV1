@@ -7,7 +7,7 @@ namespace MRX.DefenseGameV1
     {
         public const string PLAYER_TAG = "Player";
         public const string ENEMY_TAG = "Enemy";
-        public const string ENEMY_WEAPON_TAG = "Enemywp";
+        public const string ENEMY_WEAPON_TAG = "EnemyWeapon";
         public const string ATTACK_ANIM = "Attacking";
         public const string DEATH_ANIM = "Death";
         public const string DEATH_LAYER = "Death_Layer";
