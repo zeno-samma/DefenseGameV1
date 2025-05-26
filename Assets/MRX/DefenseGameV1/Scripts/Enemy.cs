@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace MRX.DefenseGameV1
 {
-    public class Enemy : MonoBehaviour
+    public class Enemy : MonoBehaviour, IsComponentChecking
     {
         public float speed;
         public float atkDistance;
@@ -22,11 +22,14 @@ namespace MRX.DefenseGameV1
         {
 
         }
-
+        public bool IsComponentNull()
+        {
+            return m_anim == null || m_rb == null || m_player == null;
+        }
         // Update is called once per frame
         void Update()
         {
-            if (m_player == null || m_rb == null) return;
+            if (IsComponentNull()) return;
             if (UnityEngine.Vector2.Distance(m_player.transform.position, transform.position) <= atkDistance)
             {
                 m_anim.SetBool(Const.ATTACK_ANIM, true);

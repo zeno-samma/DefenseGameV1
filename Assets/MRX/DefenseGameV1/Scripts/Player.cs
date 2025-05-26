@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace MRX.DefenseGameV1
 {
-    public class Player : MonoBehaviour
+    public class Player : MonoBehaviour,IsComponentChecking
     {
         public Animator m_anim;
         public float m_Attack_CD;
@@ -19,6 +19,10 @@ namespace MRX.DefenseGameV1
             // sp.color = Color.blue;
             m_anim = GetComponent<Animator>();
             m_Cur_Attack_CD = m_Attack_CD;
+        }
+        public bool IsComponentNull()
+        {
+            return m_anim == null;
         }
         private void OnEnable()
         {
@@ -57,13 +61,11 @@ namespace MRX.DefenseGameV1
         {
             // Debug.Log("Hello Update");
             // Debug.Log(gameObject.transform);
+            if (IsComponentNull()) return;
             if (Input.GetMouseButtonDown(0) && (!m_Attacked))
             {
                 // Debug.Log("Người chơi đã ấn chuột trái");
-                if (m_anim)
-                {
-                    m_anim.SetBool(Const.ATTACK_ANIM, true);
-                }
+                m_anim.SetBool(Const.ATTACK_ANIM, true);
                 m_Attacked = true;
 
             }
@@ -80,10 +82,8 @@ namespace MRX.DefenseGameV1
         }
         public void RsAnim()
         {
-            if (m_anim)
-            {
-                m_anim.SetBool(Const.ATTACK_ANIM, false);
-            }
+            if (IsComponentNull()) return;
+            m_anim.SetBool(Const.ATTACK_ANIM, false);
         }
 
         private void OnDisable()
