@@ -6,8 +6,9 @@ TagManager:
   tags:
   - Enemy
   - BG
+  - EnemyWeapon
+  - PlayerWeapon
   - 'EnemyWeapon   '
-  - 'PlayerWeapon '
   layers:
   - Default
   - TransparentFX

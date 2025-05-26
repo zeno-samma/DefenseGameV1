@@ -5,11 +5,12 @@ namespace MRX.DefenseGameV1
 {
     public class Enemy : MonoBehaviour, IsComponentChecking
     {
-        public float speed;
-        public float atkDistance;
+        public float speed;//Private sẽ không chạy
+        public float atkDistance;//Private sẽ không chạy
         private Animator m_anim;
         private Rigidbody2D m_rb;
         private Player m_player;
+        private bool isDead;
 
         private void Awake()
         {
@@ -38,6 +39,16 @@ namespace MRX.DefenseGameV1
             else
             {
                 m_rb.linearVelocity = new UnityEngine.Vector2(-speed, m_rb.linearVelocityY);
+            }
+        }
+        private void OnTriggerEnter2D(Collider2D colTarget)
+        {
+            if (IsComponentNull()) return;
+            if (colTarget.CompareTag(Const.PLAYER_WEAPON_TAG) && !isDead)
+            {
+                m_anim.SetTrigger(Const.DEATH_ANIM);
+                isDead = true;
+                gameObject.layer = LayerMask.NameToLayer(Const.DEATH_LAYER);
             }
         }
     }

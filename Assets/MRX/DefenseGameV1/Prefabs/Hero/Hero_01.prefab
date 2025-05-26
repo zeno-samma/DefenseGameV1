@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 8822863718287503672}
   m_Layer: 6
   m_Name: Weapon
-  m_TagString: 'PlayerWeapon '
+  m_TagString: PlayerWeapon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -295,7 +295,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bd61855e96f99ac4bb27d91e6a6b3eeb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_anim: {fileID: 0}
-  m_Attack_CD: 3
-  m_Cur_Attack_CD: 0
-  m_Attacked: 0

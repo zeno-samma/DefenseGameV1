@@ -8,8 +8,8 @@ namespace MRX.DefenseGameV1
     public class Player : MonoBehaviour, IsComponentChecking
     {
         private Animator m_anim;
-        private float m_Attack_CD;
-        private float m_Cur_Attack_CD;
+        public float m_Attack_CD;//Private sẽ không chạy
+        public float m_Cur_Attack_CD;//Private sẽ không chạy
         private bool m_Attacked;
         private bool isDead;
         private void Awake()
@@ -46,7 +46,6 @@ namespace MRX.DefenseGameV1
             }
             if (m_Attacked)
             {
-                Debug.Log("m_Attacked true");
                 m_Cur_Attack_CD -= Time.deltaTime;
                 if (m_Cur_Attack_CD <= 0)
                 {
