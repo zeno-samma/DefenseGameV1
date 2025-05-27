@@ -41,15 +41,11 @@ namespace MRX.DefenseGameV1
                 m_rb.linearVelocity = new UnityEngine.Vector2(-speed, m_rb.linearVelocityY);
             }
         }
-        private void OnTriggerEnter2D(Collider2D colTarget)
+        public void Die()
         {
-            if (IsComponentNull()) return;
-            if (colTarget.CompareTag(Const.PLAYER_WEAPON_TAG) && !isDead)
-            {
-                m_anim.SetTrigger(Const.DEATH_ANIM);
-                isDead = true;
-                gameObject.layer = LayerMask.NameToLayer(Const.DEATH_LAYER);
-            }
+            m_anim.SetBool(Const.DEATH_ANIM,true);
+            gameObject.layer = LayerMask.NameToLayer(Const.DEATH_LAYER);
+            Destroy(gameObject,1f);
         }
     }
 
