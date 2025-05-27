@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 3388141085666295131}
   - component: {fileID: 5908906999113229273}
   - component: {fileID: 7149051999152902322}
+  - component: {fileID: 8139265520473024212}
   m_Layer: 0
   m_Name: Weapon
   m_TagString: 'PlayerWeapon '
@@ -96,6 +97,18 @@ CircleCollider2D:
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
   m_Radius: 0.44
+--- !u!114 &8139265520473024212
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1000766542137405004}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c54f60d9fabe4c42b2c7ca2caa54e58, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6128793020786949233
 GameObject:
   m_ObjectHideFlags: 0
@@ -109,6 +122,7 @@ GameObject:
   - component: {fileID: 5736218737411101552}
   - component: {fileID: 3611167268385509273}
   - component: {fileID: 4819163434550644547}
+  - component: {fileID: 8680959064136948929}
   m_Layer: 6
   m_Name: Hero_03
   m_TagString: Player
@@ -126,7 +140,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: -1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 3388141085666295131}
@@ -243,7 +257,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0.037268043, y: -0.06521934}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -253,7 +267,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 1.84, y: 2.46}
+  m_Size: {x: 0.81512666, y: 2.1618547}
   m_EdgeRadius: 0
 --- !u!50 &4819163434550644547
 Rigidbody2D:
@@ -282,3 +296,17 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!114 &8680959064136948929
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6128793020786949233}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd61855e96f99ac4bb27d91e6a6b3eeb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Attack_CD: 2
+  m_Cur_Attack_CD: 0
