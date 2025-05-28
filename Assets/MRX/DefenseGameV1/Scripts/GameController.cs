@@ -8,6 +8,11 @@ namespace MRX.DefenseGameV1
         public float spawnTime;
         public Enemy[] enemyPrefabs;
         private bool m_isGameover;
+
+        private int m_score;
+
+        public int Score { get => m_score; set => m_score = value; }
+
         // Start is called once before the first execution of Update after the MonoBehaviour is created
         void Start()
         {

@@ -1,5 +1,7 @@
 using System.Numerics;
+using UnityEditor.Experimental.GraphView;
 using UnityEngine;
+using UnityEngine.SocialPlatforms.Impl;
 
 namespace MRX.DefenseGameV1
 {
@@ -10,13 +12,15 @@ namespace MRX.DefenseGameV1
         private Animator m_anim;
         private Rigidbody2D m_rb;
         private Player m_player;
-        private bool isDead;
+        private bool m_isDead;
 
+        private GameController m_gc;
         private void Awake()
         {
             m_anim = GetComponent<Animator>();
             m_rb = GetComponent<Rigidbody2D>();
             m_player = FindAnyObjectByType<Player>();//Hoặc FindFirstObjectByType: FindAnyObjectByType nhanh hơn nếu không quan tâm đến thứ tự
+            m_gc = FindAnyObjectByType<GameController>();
         }
         // Start is called once before the first execution of Update after the MonoBehaviour is created
         void Start()
@@ -43,9 +47,13 @@ namespace MRX.DefenseGameV1
         }
         public void Die()
         {
-            m_anim.SetBool(Const.DEATH_ANIM,true);
+            if (IsComponentNull() || m_isDead) return;
+            m_isDead = true;
+            m_anim.SetBool(Const.DEATH_ANIM, true);
             gameObject.layer = LayerMask.NameToLayer(Const.DEATH_LAYER);
-            Destroy(gameObject,1f);
+            Destroy(gameObject, 1f);
+            if (m_gc)
+                m_gc.Score++;
         }
     }
 

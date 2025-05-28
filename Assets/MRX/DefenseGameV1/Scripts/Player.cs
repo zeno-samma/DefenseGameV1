@@ -12,6 +12,7 @@ namespace MRX.DefenseGameV1
         public float m_Cur_Attack_CD;//Private sẽ không chạy
         private bool m_Attacked;
         private bool isDead;
+        
         private void Awake()
         {
             m_anim = GetComponent<Animator>();
@@ -75,6 +76,7 @@ namespace MRX.DefenseGameV1
             {
                 m_anim.SetTrigger(Const.DEATH_ANIM);
                 isDead = true;
+                gameObject.layer = LayerMask.NameToLayer(Const.DEATH_LAYER);
             }
         }
     }
