@@ -119,6 +119,54 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &82534491
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 82534493}
+  - component: {fileID: 82534492}
+  m_Layer: 0
+  m_Name: ShopController
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &82534492
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 82534491}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 75e94ba954304f4408bd839ca5615b1d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  items:
+  - playerPrefabs: {fileID: 0}
+    price: 0
+    previewIMG: {fileID: 0}
+--- !u!4 &82534493
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 82534491}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.49360907, y: 0.79497534, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -268,7 +316,7 @@ GameObject:
   - component: {fileID: 1088840005}
   m_Layer: 0
   m_Name: GameController
-  m_TagString: Respawn
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -285,7 +333,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f03b15935f7e184a937ad77dc0fb765, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnTime: 3
+  spawnTime: 5
   enemyPrefabs:
   - {fileID: 90380924124245449, guid: f8e35d884e9da614088f65969595e461, type: 3}
   - {fileID: 4915017913691198750, guid: ca4e26e9eaca5ad48900be1931d0b720, type: 3}
@@ -504,3 +552,4 @@ SceneRoots:
   - {fileID: 1283804140}
   - {fileID: 1088840006}
   - {fileID: 1398346560}
+  - {fileID: 82534493}
