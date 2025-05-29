@@ -9,6 +9,8 @@ namespace MRX.DefenseGameV1
     {
         public float speed;//Private sẽ không chạy
         public float atkDistance;//Private sẽ không chạy
+        public int minCoinBonus;
+        public int maxCoinBonus;
         private Animator m_anim;
         private Rigidbody2D m_rb;
         private Player m_player;
@@ -29,7 +31,7 @@ namespace MRX.DefenseGameV1
         }
         public bool IsComponentNull()
         {
-            return m_anim == null || m_rb == null || m_player == null;
+            return m_anim == null || m_rb == null || m_player == null ||m_gc == null;
         }
         // Update is called once per frame
         void Update()
@@ -51,9 +53,11 @@ namespace MRX.DefenseGameV1
             m_isDead = true;
             m_anim.SetBool(Const.DEATH_ANIM, true);
             gameObject.layer = LayerMask.NameToLayer(Const.DEATH_LAYER);
+            m_gc.Score++;
+            int coinBonus = Random.Range(minCoinBonus, maxCoinBonus);
+            Pref.coins += coinBonus;
+            Debug.Log($"Đã Chết. Coin bonus: {coinBonus}. Tổng coins: {Pref.coins}");
             Destroy(gameObject, 1f);
-            if (m_gc)
-                m_gc.Score++;
         }
     }
 
