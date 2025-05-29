@@ -1,4 +1,5 @@
 using System.Collections;
+using MRX.DefenseGameV1.UI;
 using Unity.Mathematics;
 using Unity.VisualScripting;
 using UnityEngine;
@@ -12,15 +13,18 @@ namespace MRX.DefenseGameV1
         public float m_Cur_Attack_CD;//Private sẽ không chạy
         private bool m_Attacked;
         private bool isDead;
-        
+
+        public GameController m_gc;
+
         private void Awake()
         {
             m_anim = GetComponent<Animator>();
             m_Cur_Attack_CD = m_Attack_CD;
+            m_gc = FindAnyObjectByType<GameController>();
         }
         public bool IsComponentNull()
         {
-            return m_anim == null;
+            return m_anim == null || m_gc == null;
         }
         private void OnEnable()
         {
@@ -77,6 +81,7 @@ namespace MRX.DefenseGameV1
                 m_anim.SetTrigger(Const.DEATH_ANIM);
                 isDead = true;
                 gameObject.layer = LayerMask.NameToLayer(Const.DEATH_LAYER);
+                m_gc.GameOver();
             }
         }
     }

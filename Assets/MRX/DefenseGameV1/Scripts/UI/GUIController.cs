@@ -1,3 +1,4 @@
+using System;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -44,6 +45,7 @@ namespace MRX.DefenseGameV1.UI
                 gameplayerCoinTxt.text = Pref.coins.ToString();
             }
         }
+        
     }
 
 }

@@ -18,6 +18,8 @@ namespace MRX.DefenseGameV1
         public const string COIN_PREF = "Coins";
         public const string MUSIC_VOL_PREF = "Music_vol";
         public const string SOUND_VOL_PREF = "Sound_vol";
+
+        public const string GAMEPLAY_SCENE = "Gameplay";
     }
 
 }

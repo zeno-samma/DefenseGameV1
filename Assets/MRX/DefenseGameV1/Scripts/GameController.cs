@@ -42,6 +42,14 @@ namespace MRX.DefenseGameV1
             m_isGameover = false;
             StartCoroutine(SpawnEnemy());
         }
+        public void GameOver()
+        {
+            if (IsComponentNull()) return;
+            m_isGameover = true;
+            Pref.bestCore = m_score;
+            guiGc.gameoverDialog.Show(true);
+            StopAllCoroutines();
+        }
         IEnumerator SpawnEnemy()
         {
             while (!m_isGameover)
