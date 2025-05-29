@@ -1,12 +1,14 @@
 using System.Collections;
+using MRX.DefenseGameV1.UI;
 using UnityEngine;
 
 namespace MRX.DefenseGameV1
 {
-    public class GameController : MonoBehaviour
+    public class GameController : MonoBehaviour, IsComponentChecking
     {
         public float spawnTime;
         public Enemy[] enemyPrefabs;
+        public GUIController guiGc;
         private bool m_isGameover;
 
         private int m_score;
@@ -16,13 +18,29 @@ namespace MRX.DefenseGameV1
         // Start is called once before the first execution of Update after the MonoBehaviour is created
         void Start()
         {
-            StartCoroutine(SpawnEnemy());
+            // StartCoroutine(SpawnEnemy());
+            if (IsComponentNull()) return;
+            guiGc.ShowGameGUI(false);
+            guiGc.UpdateMainCoin();
+            guiGc.UpdateGamePlayerCoin();
         }
-
+        public bool IsComponentNull()
+        {
+            return guiGc == null || enemyPrefabs == null || enemyPrefabs.Length == 0;
+        }
         // Update is called once per frame
         void Update()
         {
 
+            // guiGc.UpdateMainCoin();
+            // guiGc.UpdateGamePlayerCoin();
+        }
+        public void PlayGame()
+        {
+            if (IsComponentNull()) return;
+            guiGc.ShowGameGUI(true);
+            m_isGameover = false;
+            StartCoroutine(SpawnEnemy());
         }
         IEnumerator SpawnEnemy()
         {

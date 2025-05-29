@@ -4,7 +4,7 @@ using UnityEngine.UI;
 
 namespace MRX.DefenseGameV1.UI
 {
-    public class GUIControl : MonoBehaviour
+    public class GUIController : MonoBehaviour
     {
         public GameObject homeGui;
         public GameObject gameGui;

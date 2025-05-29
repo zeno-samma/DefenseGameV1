@@ -58,6 +58,7 @@ namespace MRX.DefenseGameV1
             Pref.coins += coinBonus;
             Debug.Log($"Đã Chết. Coin bonus: {coinBonus}. Tổng coins: {Pref.coins}");
             Destroy(gameObject, 1f);
+            m_gc.guiGc.UpdateGamePlayerCoin();
         }
     }
 
