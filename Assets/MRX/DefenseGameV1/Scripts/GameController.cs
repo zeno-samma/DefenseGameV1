@@ -11,6 +11,7 @@ namespace MRX.DefenseGameV1
         public GUIController guiGc;
         private bool m_isGameover;
 
+        // public float timeScale = 1f;
         private int m_score;
 
         public int Score { get => m_score; set => m_score = value; }
@@ -31,7 +32,7 @@ namespace MRX.DefenseGameV1
         // Update is called once per frame
         void Update()
         {
-
+            // Time.timeScale = timeScale;
             // guiGc.UpdateMainCoin();
             // guiGc.UpdateGamePlayerCoin();
         }
@@ -41,6 +42,7 @@ namespace MRX.DefenseGameV1
             guiGc.ShowGameGUI(true);
             m_isGameover = false;
             StartCoroutine(SpawnEnemy());
+            Time.timeScale = 1f; 
         }
         public void GameOver()
         {
@@ -49,6 +51,7 @@ namespace MRX.DefenseGameV1
             Pref.bestCore = m_score;
             guiGc.gameoverDialog.Show(true);
             StopAllCoroutines();
+            Time.timeScale = 0f;    
         }
         IEnumerator SpawnEnemy()
         {
